@@ -1,0 +1,56 @@
+/* written by joel */
+
+/* css/standard.css */
+
+#main_title {
+	background-size: cover;
+	background-image: url(../img/main-title2.png);
+	color: grey;
+	text-align: center;
+}
+
+#left_sheet {
+	background-color: #D8D9DB;
+	vertical-align: top;
+	text-align: left;
+	font-size: 1.25em;
+	line-height: 1em;
+}
+
+#main_content {
+	background-image: url(../img/main-text.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0 80px;
+	vertical-align: top;
+	text-align: justify;
+	text-indent: 2em;
+	font-size: 14pt;
+	width: 1000px;
+	height: 50em;
+}
+
+#foot {
+	text-align: right;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.link_specified {
+	text-decoration: underline;
+}
+
+a.egg {
+	color: white;
+}
+
+footer {
+	text-align: right;
+	font-size: ;
+}
+
+h1 {
+	font-size: 3em;
+}
