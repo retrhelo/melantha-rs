@@ -7,6 +7,10 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# for analysing toml config 
 toml = "0.5.8"
 serde = "1.0"
 serde_derive = "1.0"
+
+# for loading command-line args 
+clap = "2.33.3"
