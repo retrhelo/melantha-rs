@@ -283,6 +283,7 @@ IterImpl	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c5
 IterMut	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/map.rs	/^pub struct IterMut<'a> {$/;"	s
 IterMutImpl	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/map.rs	/^type IterMutImpl<'a> = btree_map::IterMut<'a, String, Value>;$/;"	T
 IterMutImpl	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/map.rs	/^type IterMutImpl<'a> = indexmap::map::IterMut<'a, String, Value>;$/;"	T
+Job	/home/retrhelo/Programming/melantha-rs/src/mthread.rs	/^type Job = Box<FnOnce() + Send + 'static>$/;"	T
 Keys	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/map.rs	/^pub struct Keys<'a> {$/;"	s
 KeysImpl	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/map.rs	/^type KeysImpl<'a> = btree_map::Keys<'a, String, Value>;$/;"	T
 KeysImpl	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/map.rs	/^type KeysImpl<'a> = indexmap::map::Keys<'a, String, Value>;$/;"	T
@@ -515,6 +516,7 @@ Serializer	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3
 Serializer	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/value.rs	/^struct Serializer;$/;"	s
 Settings	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/ser.rs	/^struct Settings {$/;"	s
 Shell	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/clap-2.33.3/src/completions/shell.rs	/^pub enum Shell {$/;"	g
+Signal	/home/retrhelo/Programming/melantha-rs/src/mthread.rs	/^enum Signal {$/;"	g
 Span	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/tokens.rs	/^pub struct Span {$/;"	s
 Spanned	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/spanned.rs	/^pub struct Spanned<T> {$/;"	s
 SpannedDeserializer	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/de.rs	/^struct SpannedDeserializer<'de, T: de::IntoDeserializer<'de, Error>> {$/;"	s
@@ -562,6 +564,7 @@ TaggedContent	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df
 TaggedContentVisitor	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde-1.0.123/src/private/de.rs	/^    pub struct TaggedContentVisitor<'de, T> {$/;"	s
 TaggedSerializer	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde-1.0.123/src/private/ser.rs	/^struct TaggedSerializer<S> {$/;"	s
 Target	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/clap-2.33.3/src/macros.rs	/^            type Target = str;$/;"	T
+ThreadPool	/home/retrhelo/Programming/melantha-rs/src/mthread.rs	/^pub struct ThreadPool {$/;"	s
 Time	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/datetime.rs	/^struct Time {$/;"	s
 Token	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/tokens.rs	/^pub enum Token<'a> {$/;"	g
 Tokenizer	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/tokens.rs	/^pub struct Tokenizer<'a> {$/;"	s
@@ -685,6 +688,7 @@ Visitor	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c54
 Void	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde-1.0.123/src/ser/impossible.rs	/^enum Void {}$/;"	g
 WAIT_ON_ERROR	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/clap-2.33.3/src/app/settings.rs	/^        const WAIT_ON_ERROR        = 1 << 6;$/;"	c
 WITH	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde_derive-1.0.123/src/internals/symbol.rs	/^pub const WITH: Symbol = Symbol("with");$/;"	c
+Worker	/home/retrhelo/Programming/melantha-rs/src/mthread.rs	/^struct Worker {$/;"	s
 ZshGen	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/clap-2.33.3/src/completions/zsh.rs	/^pub struct ZshGen<'a, 'b>$/;"	s
 _StrExt	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/clap-2.33.3/src/strext.rs	/^pub trait _StrExt {$/;"	t
 __AdjacentlyTagged	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde_derive-1.0.123/src/ser.rs	/^        struct __AdjacentlyTagged #wrapper_generics #where_clause {$/;"	s
@@ -1751,6 +1755,7 @@ new	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42
 new	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/value.rs	/^    fn new(map: Map<String, Value>) -> Self {$/;"	f
 new	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/toml-0.5.8/src/value.rs	/^    fn new(vec: Vec<Value>) -> Self {$/;"	f
 new	/home/retrhelo/Programming/melantha-rs/src/http.rs	/^	pub fn new(prefix: &String, filename: &str, socket_handler: TcpStream) ->Result<HttpResponse, Error> {$/;"	f
+new	/home/retrhelo/Programming/melantha-rs/src/mthread.rs	/^	pub fn new(id: usize, receiver: Arc<Mutex<Receiver<Signal>>>) ->Worker {$/;"	f
 newtype_variant	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde-1.0.123/src/de/mod.rs	/^    fn newtype_variant<T>(self) -> Result<T, Self::Error>$/;"	f
 newtype_variant_seed	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde-1.0.123/src/de/mod.rs	/^    fn newtype_variant_seed<T>(self, seed: T) -> Result<T::Value, Self::Error>$/;"	f
 newtype_variant_seed	/home/retrhelo/.cargo/registry/src/mirrors.tuna.tsinghua.edu.cn-df7c3c540f42cdbd/serde-1.0.123/src/de/value.rs	/^        fn newtype_variant_seed<T>(mut self, seed: T) -> Result<T::Value, Self::Error>$/;"	f

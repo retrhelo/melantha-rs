@@ -167,6 +167,10 @@ pub fn resolve_request(prefix: &String, mut incoming: TcpStream) ->Option<HttpRe
 				i += 1;
 			}
 
+			if String::from("/") == filename {
+				filename = String::from("/index.html");
+			}
+
 			return match HttpResponse::new(
 				prefix, 
 				&filename, 
