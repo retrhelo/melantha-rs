@@ -3,6 +3,7 @@
 use std::thread;
 
 // Worker is an unit for executing given task 
+#[allow(unused)]
 struct Worker {
 	id: usize, 
 	thread: Option<thread::JoinHandle<()>>, 
@@ -10,11 +11,15 @@ struct Worker {
 
 use std::sync::Arc;
 use std::sync::Mutex;
-use std::sync::mpsc::Receiver;
+use std::sync::mpsc::{
+	Receiver, SendError, 
+};
 
 type Job = Box<dyn FnOnce() + Send + 'static>;
+type Result = std::result::Result<(), SendError<Signal>>;
 
-enum Signal {
+#[allow(unused)]
+pub enum Signal {
 	Task(Job), 
 	Terminate, 
 }
@@ -23,13 +28,18 @@ use self::Signal::Terminate;
 
 impl Worker {
 	pub fn new(id: usize, receiver: Arc<Mutex<Receiver<Signal>>>) ->Worker {
-		let thread = thread::spawn(move || loop {
-			let signal = receiver.lock().unwrap().recv().unwrap();
+		let thread = thread::spawn(move || {
+			loop {
+				let signal = receiver.lock().unwrap().recv().unwrap();
 
-			match signal {
-				Task(job) => job(), 
-				Terminate => break, 
-			};
+				match signal {
+					Task(job) => job(), 
+					Terminate => break, 
+				};
+			}
+
+			// log::info!("worker {} exit", id);
+			println!("worker {} exit", id);
 		});
 
 		Worker { id, thread: Some(thread)} 
@@ -39,7 +49,7 @@ impl Worker {
 use std::sync::mpsc::Sender;
 
 pub struct ThreadPool {
-	threads: Vec<Worker>, 
+	_threads: Vec<Worker>, 
 	sender: Sender<Signal>, 
 }
 
@@ -64,31 +74,36 @@ impl ThreadPool {
 			threads.push(worker);
 		}
 
-		ThreadPool { threads, sender}
+		ThreadPool { _threads: threads, sender}
 	}
 
-	pub fn execute<F>(&self, f: F) ->Result<(), String> 
+	pub fn execute<F>(&mut self, f: F) ->Result
 		where F: FnOnce() + Send + 'static
 	{
 		let job = Box::new(f);
 
-		match self.sender.send(Task(job)) {
-			Ok(_) => Ok(()), 
-			Err(_) => Err(String::from("fail to execute")), 
-		}
+		self.sender.send(Task(job))
 	}
-}
 
-impl Drop for ThreadPool {
-	fn drop(&mut self) {
-		for _ in &self.threads {
-			self.sender.send(Terminate);
+	pub fn terminate(&mut self) ->Result {
+		for _ in &self._threads {
+			self.sender.send(Terminate).unwrap();
 		}
 
-		for worker in &mut self.threads {
+		for worker in &mut self._threads {
 			if let Some(thread) = worker.thread.take() {
 				thread.join().unwrap();
 			}
 		}
+
+		Ok(())
+	}
+}
+
+// I think that ThreadPool will never be dropped, since we'll run 
+// it continuously in main() until SIGINT is received. 
+impl Drop for ThreadPool {
+	fn drop(&mut self) {
+		self.terminate().unwrap();
 	}
 }
